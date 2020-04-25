@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}{% endblock page_title %}| PLZEAT</title>
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="{% static '/core/css/base.css' %}" type="text/css">
+    {% block css %}{% endblock css %}
+
+    <!-- Font link -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+</head>
+
+<body>
+    <header>
+        {% include "partials/header.html" %}
+        {% include "partials/nav.html" %}
+        {% include "partials/hidden_menu.html" %}
+    </header>
+    {% block content %}{% endblock content %}
+    {% include "partials/footer.html" %}
+
+
+    <script src="{% static 'core/js/menu.js' %}"></script>
+    {% block script %}{% endblock script %}
+
+</body>
+
+</html>

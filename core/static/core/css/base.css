@@ -1,0 +1,89 @@
+/*
+*
+ 전체 스타일 
+*
+*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+/*
+*
+header
+*
+*/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    height: 150px;
+    background-color: #FFFFEF;
+}
+
+.header_title {
+    display: flex;
+    align-items: center;
+}
+
+.header_title>img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header_title>span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*
+*
+nav
+*
+*/
+nav {
+    z-index: 100;
+}
+
+nav>img {
+    height: 50px;
+}
+
+nav>img:hover {
+    cursor: pointer;
+}
+
+
+/*
+*
+hidden_menu
+*
+*/
+.hidden_menu {
+    height: 100vh;
+    background-color: #dddddd;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    transition: right 0.5s ease 0.2s;
+}
+
+.jsClickedHiddenMenu {
+    right: 0;
+}

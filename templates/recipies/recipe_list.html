@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_title %}
+    '{{user}}'님을 위한 추천레시피
+{% endblock page_title %}
+
+
+{% block css %}{% endblock css %}
+
+
+
+{% block content %}
+    <h1>추천 레시피</h1>
+    <hr>
+    {% for recipe in recipes  %}
+        <h3>{{recipe.name}}</h3>
+        <h3>들어가는 재료</h3>
+        <ul>
+            {% for food in recipe.food.all %}
+                <li>{{food.name}}</li>
+            {% endfor %}
+        </ul>
+        <p>만드는 법 : {{recipe.how_to_create}}</p>
+        <hr>
+    {% endfor %}
+{% endblock content %}
+
+
+{% block script %}
+
+{% endblock script %}

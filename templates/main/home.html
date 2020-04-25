@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    Home
+{% endblock page_title %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'core/css/home.css' %}" type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+    {% for user in users %}
+    <h1>{{user}}<a href="{% url 'recipies:recipe_list' user.pk %}">('{{user}}'님의 맞춤 추천레피시)</a></h1>
+        {% for food in user.foods.all %}
+            <h2>{{food}}<a href="{% url 'foods:food_detail' food.pk %}">({{food}}관련 설명으로 가기)</a></h2>
+            <img class="food_img" src="{{food.photo.url}}" alt="img">
+            <h5>남은 갯수 : {{food.quantity}}개</h5>
+            <h5>유통기한 : {{food.expired_date}}까지</h5>
+            <hr>
+        {% endfor %}
+    <br><br><br>
+    {% endfor %}
+{% endblock content %}
+
+
+{% block script %}
+
+{% endblock script %}
