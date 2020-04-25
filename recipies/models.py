@@ -3,6 +3,7 @@ from django.db import models
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100, null=True)
+    photo = models.ImageField(upload_to="recipies", default="default.png")
     food = models.ManyToManyField("FoodInRecipe", related_name="recipies", blank=True)
     how_to_create = models.TextField(max_length=10000, null=True)
 

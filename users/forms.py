@@ -42,5 +42,7 @@ class SignUpForm(forms.ModelForm):
         password = self.cleaned_data.get("password")
         user = super().save(commit=False)
         user.username = email
+        listed_email = email.split("@")
+        user.nickname = listed_email[0]
         user.set_password(password)
         user.save()

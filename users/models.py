@@ -10,8 +10,9 @@ from django.template.loader import render_to_string
 
 
 class User(AbstractUser):
-    email_verified = models.BooleanField(default=False)
+    email_verified = models.BooleanField(default=True)
     email_secret = models.CharField(max_length=120, default="", blank=True)
+    nickname = models.CharField(max_length=100, null=True)
 
     def verify_email(self):
         if self.email_verified is False:

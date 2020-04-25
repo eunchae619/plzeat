@@ -120,6 +120,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     "/core/static/",
     "/foods/static/",
+    "/recipies/static/",
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")

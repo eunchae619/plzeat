@@ -26,12 +26,18 @@ header
 *
 */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
-    height: 150px;
+    padding: 20px;
+    padding-right: 30px;
+    width: 100vw;
+    height: 100px;
     background-color: #FFFFEF;
 }
 
@@ -81,9 +87,19 @@ hidden_menu
     position: fixed;
     top: 0;
     right: -250px;
-    transition: right 0.5s ease 0.2s;
+    transition: right 0.5s ease;
 }
 
 .jsClickedHiddenMenu {
     right: 0;
+}
+
+/*
+*
+wrapper
+*
+*/
+.wrapper {
+    position: relative;
+    top: 100px;
 }
