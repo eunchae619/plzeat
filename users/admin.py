@@ -12,8 +12,25 @@ class FoodInline(admin.TabularInline):
 
 @admin.register(models.User)
 class CustomUserAdmin(UserAdmin):
-    fieldsets = UserAdmin.fieldsets + (("Custom Profile", {"fields": ()},),)
+    fieldsets = (
+        ("Personal Info", {"fields": ("username", "email", "password",)},),
+        ("About Email", {"fields": ("email_verified",)},),
+        (
+            "Permissions",
+            {
+                "classes": ("collapse",),
+                "fields": ("is_active", "is_staff", "is_superuser",),
+            },
+        ),
+    )
 
     inlines = [
         FoodInline,
     ]
+
+    list_display = (
+        "username",
+        "is_superuser",
+        "email_verified",
+        "email_secret",
+    )

@@ -16,11 +16,13 @@
 </head>
 
 <body>
-    <header>
-        {% include "partials/header.html" %}
-        {% include "partials/nav.html" %}
-        {% include "partials/hidden_menu.html" %}
-    </header>
+    {% block header %}
+        <header>
+            {% include "partials/header.html" %}
+            {% include "partials/nav.html" %}
+            {% include "partials/hidden_menu.html" %}
+        </header>
+    {% endblock header %}
     {% block content %}{% endblock content %}
     {% include "partials/footer.html" %}
 

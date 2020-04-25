@@ -1,18 +1,23 @@
 {% extends "base.html" %}
+
 {% block page_title %}
-login
+Login
 {% endblock page_title %}
 
-
-{% block css %}{% endblock css %}
-
-
+{% block header %}{% endblock header %}
 
 {% block content %}
-login
+    <form method="POST" action="{% url 'core:login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% if not_verified is not None %}
+            <ul class="errorlist">
+                <li>{{not_verified}}</li>
+            </ul>
+        {% endif %}
+        <button>Login</button>
+        <a href="{% url 'users:signup' %}">회원가입 하기</a>
+
+    </form>
+    <br><br><br>
 {% endblock content %}
-
-
-{% block script %}
-
-{% endblock script %}
