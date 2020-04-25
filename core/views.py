@@ -25,6 +25,7 @@ class LoginView(View):
             user = authenticate(request, username=email, password=password)
             if user is not None:
                 check_user = users_models.User.objects.get(email=email)
+                pk = check_user.pk
                 if check_user.email_verified is True:
                     login(request, user)
                     return redirect(reverse("core:home"))
