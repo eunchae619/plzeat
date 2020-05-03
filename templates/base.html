@@ -17,15 +17,15 @@
 
 <body>
     {% block header %}
-        <header>
-            {% include "partials/header.html" %}
-            {% include "partials/nav.html" %}
-            {% include "partials/hidden_menu.html" %}
-        </header>
+    <header>
+        {% include "partials/header.html" %}
+        {% include "partials/nav.html" %}
+        {% include "partials/hidden_menu.html" %}
+    </header>
     {% endblock header %}
     <div class="wrapper">
         {% block content %}{% endblock content %}
-        {% include "partials/footer.html" %}
+        {% include "partials/bottom_menu.html" %}
     </div>
 
 

@@ -103,3 +103,33 @@ wrapper
     position: relative;
     top: 100px;
 }
+
+/*
+*
+bottom_menu
+*
+*/
+.bottom_menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #FFFFEF;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+
+}
+
+.bottom_menu>a {
+    width: 33%;
+    height: 100%;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom_menu>a:hover {
+    background-color: burlywood;
+}
