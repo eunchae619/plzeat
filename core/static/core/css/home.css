@@ -11,6 +11,11 @@
     font-size: 1.5rem;
 }
 
+.food_more {
+    font-size: 2rem;
+    color: #ffbe46;
+}
+
 .food_list {
     display: flex;
     justify-content: space-around;

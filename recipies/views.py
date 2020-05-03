@@ -33,5 +33,6 @@ def recipe_list(request, pk):
     return render(request, "recipies/recipe_list.html", context)
 
 
-def recipe_detail(request):
-    return render(request, "recipies/recipe_detail.html")
+def recipe_detail(request, pk):
+    recipe = recipies_model.Recipe.objects.get(pk=pk)
+    return render(request, "recipies/recipe_detail.html", {"recipe": recipe})

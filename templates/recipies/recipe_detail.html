@@ -1,15 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block page_title %}
 Recommandation
 {% endblock page_title %}
 
 
-{% block css %}{% endblock css %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'recipies/css/recipe_detail.css' %}" type="text/css">
+{% endblock css %}
 
 
 
 {% block content %}
-Recommandation
+<img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
+<h3>{{recipe.name}}</h3>
+<hr>
+<h3>들어가는 재료</h3>
+<ul>
+    {% for food in recipe.food.all %}
+    <li>{{food.name}}</li>
+    {% endfor %}
+</ul>
+<p>만드는 법 : {{recipe.how_to_create}}</p>
 {% endblock content %}
 
 

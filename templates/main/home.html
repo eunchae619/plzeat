@@ -14,7 +14,7 @@ Home
 {% block content %}
 <div class="main_top">
     <span>내 등록된 식자재</span>
-    <a href="#">식자재리스트</a>
+    <a href="{% url 'foods:list' %}"><i class="fas fa-plus-circle food_more"></i></a>
 </div>
 <div class="food_list">
     {% for food in user.foods.all %}

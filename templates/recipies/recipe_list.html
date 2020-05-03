@@ -1,31 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_title %}
-    '{{user}}'님을 위한 추천레시피
+'{{user}}'님을 위한 추천레시피
 {% endblock page_title %}
 
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'recipies/css/recipe_list.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'recipies/css/recipe_list.css' %}" type="text/css">
 {% endblock css %}
 
 
 
 {% block content %}
-    <h1>추천 레시피</h1>
-    <hr>
-    {% for recipe in recipes  %}
+{% for recipe in recipes  %}
+<a href="{% url 'recipies:recipe_detail' recipe.pk %}">
+    <div>
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
         <h3>{{recipe.name}}</h3>
-        <h3>들어가는 재료</h3>
-        <ul>
-            {% for food in recipe.food.all %}
-                <li>{{food.name}}</li>
-            {% endfor %}
-        </ul>
-        <p>만드는 법 : {{recipe.how_to_create}}</p>
-        <hr>
-    {% endfor %}
+    </div>
+</a>
+{% endfor %}
 {% endblock content %}
 
 

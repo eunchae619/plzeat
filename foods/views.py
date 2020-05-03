@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic import CreateView, ListView
 from users import models as users_model
 from . import models as foods_model, forms
 
 # Create your views here.
+
+
+class FoodList(ListView):
+    model = foods_model.Food
+    paginate_by = 9
+    ordering = "created"
+    context_object_name = "foods"
 
 
 def food_detail(request, pk):

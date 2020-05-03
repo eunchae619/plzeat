@@ -22,6 +22,7 @@ class Food(models.Model):
     photo = models.ImageField(upload_to="enrolled_food", default="default.png")
     expired_date = models.DateField(null=False)
     quantity = models.IntegerField(null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
     user = models.ForeignKey(
         users_models.User, related_name="foods", on_delete=models.CASCADE
     )

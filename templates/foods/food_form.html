@@ -1,4 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+식자재 등록
+{% endblock page_title %}
+
+{% block css %}
+
+{% endblock css %}
+
+
+{% block content %}
 <form method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
+{% endblock content %}

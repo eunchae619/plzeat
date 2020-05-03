@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+식자재 리스트
+{% endblock page_title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'foods/css/food_list.css' %}" type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+{% for food in foods %}
+<div>
+    <img class="food_img" src="{{food.photo.url}}" alt="img">
+    <span>{{food}}</span>
+    <span>유통기한 : ..일 까지</span>
+    <span>잔량 : {{food.quantity}}개</span>
+</div>
+{% endfor %}
+{% endblock content %}
