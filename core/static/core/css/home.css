@@ -1,4 +1,34 @@
+.main_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main_top>span {
+    font-size: 1.5rem;
+}
+
+.food_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 3vh 0;
+}
+
+.food_card {
+    width: 40vw;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+
 .food_img {
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
 }

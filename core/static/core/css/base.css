@@ -37,7 +37,7 @@ header {
     padding: 20px;
     padding-right: 30px;
     width: 100vw;
-    height: 100px;
+    height: 15vh;
     background-color: #FFFFEF;
 }
 
@@ -83,10 +83,10 @@ hidden_menu
 .hidden_menu {
     height: 100vh;
     background-color: #dddddd;
-    width: 200px;
+    width: 400px;
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -400px;
     transition: right 0.5s ease;
 }
 
@@ -101,7 +101,9 @@ wrapper
 */
 .wrapper {
     position: relative;
-    top: 100px;
+    top: 15vh;
+    width: 100vw;
+    height: 65vh;
 }
 
 /*
@@ -115,7 +117,7 @@ bottom_menu
     left: 0;
     background-color: #FFFFEF;
     width: 100vw;
-    height: 100px;
+    height: 15vh;
     display: flex;
 
 }

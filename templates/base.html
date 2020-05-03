@@ -25,7 +25,7 @@
     {% endblock header %}
     <div class="wrapper">
         {% block content %}{% endblock content %}
-        {% include "partials/bottom_menu.html" %}
+        {% block bottom_menu %}{% include "partials/bottom_menu.html"%}{% endblock bottom_menu %}
     </div>
 
 

@@ -4,4 +4,7 @@ from . import views
 
 app_name = "foods"
 
-urlpatterns = [path("<int:pk>", views.food_detail, name="food_detail")]
+urlpatterns = [
+    path("<int:pk>/", views.food_detail, name="food_detail"),
+    path("register/", views.FoodRegisterView.as_view(), name="register"),
+]

@@ -12,7 +12,7 @@ from django.views.generic.edit import FormView
 
 def log_out(request):
     logout(request)
-    return redirect(reverse("core:home"))
+    return redirect(reverse("core:login"))
 
 
 class SignUpView(FormView):

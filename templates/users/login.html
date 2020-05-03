@@ -7,24 +7,25 @@ Login
 
 
 {% block css %}
-    <link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
 {% endblock css %}
-    
+
 
 {% block header %}{% endblock header %}
 
 {% block content %}
-    <form method="POST" action="{% url 'core:login' %}">
-        {% csrf_token %}
-        {{form.as_p}}
-        {% if not_verified is not None %}
-            <ul class="errorlist">
-                <li>{{not_verified}}</li>
-            </ul>
-        {% endif %}
-        <button>Login</button>
-        <a href="{% url 'users:signup' %}">회원가입 하기</a>
+<form method="POST" action="{% url 'core:login' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% if not_verified is not None %}
+    <ul class="errorlist">
+        <li>{{not_verified}}</li>
+    </ul>
+    {% endif %}
+    <button>Login</button>
+    <a href="{% url 'users:signup' %}">회원가입 하기</a>
 
-    </form>
-    <br><br><br>
+</form>
+<br><br><br>
 {% endblock content %}
+{% block bottom_menu %}{% endblock bottom_menu %}
