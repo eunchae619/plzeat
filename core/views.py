@@ -4,6 +4,7 @@ from users import models as users_models
 from django.views import View
 from django.contrib.auth import authenticate, login
 from users import forms
+from . import mixins
 
 
 def home(request):
@@ -11,7 +12,7 @@ def home(request):
     return render(request, "main/home.html", {"users": users})
 
 
-class LoginView(View):
+class LoginView(mixins.LoggedOutOnlyView, View):
     def get(self, request):
         form = forms.LoginForm()
         return render(request, "users/login.html", {"form": form})
