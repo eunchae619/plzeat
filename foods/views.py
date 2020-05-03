@@ -9,9 +9,13 @@ from . import models as foods_model, forms
 
 class FoodList(ListView):
     model = foods_model.Food
-    paginate_by = 9
+    paginate_by = 4
     ordering = "created"
     context_object_name = "foods"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 def food_detail(request, pk):
