@@ -1,5 +1,7 @@
 from django.db import models
+from django.utils import timezone
 from users import models as users_models
+from django.utils.html import mark_safe
 
 # Create your models here.
 
@@ -26,6 +28,18 @@ class Food(models.Model):
     user = models.ForeignKey(
         users_models.User, related_name="foods", on_delete=models.CASCADE
     )
+
+    def count_date(self):
+        cal_date = self.expired_date - timezone.localtime().date()
+        cal_date = str(cal_date)
+
+        if cal_date[0] == "-":
+            return mark_safe(f"<span style='color:red;'>{cal_date[1]}일 지남</span>")
+        else:
+            if cal_date[0] == "0":
+                return "오늘까지"
+            elif int(cal_date[0]) > 0:
+                return f"{cal_date[0]}일 남음"
 
     def __str__(self):
         return self.name

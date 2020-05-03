@@ -14,7 +14,7 @@
 <img class="food_img" src="{{food.photo.url}}" alt="img">
 <h1>{{food.name}}</h1>
 <p>잔량 : {{food.quantity}}개</p>
-<p>유통기한 : ..일 까지</p>
+<p>유통기한 : {{food.count_date}}</p>
 <hr>
 {% if how_to_store %}
 <h2>식자재 보관법</h2>
@@ -22,11 +22,9 @@
 <h2>식자재 손질법</h2>
 <p>{{how_to_trim}}</p>
 {% endif %}
-<br><br><br>
-<h2>추천 레시피<h2>
-        {% endblock content %}
+{% endblock content %}
 
 
-        {% block script %}
+{% block script %}
 
-        {% endblock script %}
+{% endblock script %}
