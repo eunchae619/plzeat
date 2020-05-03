@@ -12,7 +12,7 @@
 
 
 {% block content %}
-{% for recipe in recipes  %}
+{% for recipe in paged_recipes  %}
 <a href="{% url 'recipies:recipe_detail' recipe.pk %}">
     <div>
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
@@ -20,6 +20,10 @@
     </div>
 </a>
 {% endfor %}
+
+{% include "partials/paginator.html" %}
+
+
 {% endblock content %}
 
 

@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.db.models import Count
+from django.core.paginator import Paginator
 from users import models as users_model
 from . import models as recipies_model
-from django.db.models import Count
 
 
 def recipe_list(request, pk):
@@ -21,14 +22,16 @@ def recipe_list(request, pk):
         if count == reco_food_len:
             resulted_reco_recipe.append(reco_food.name)
     recipes = reco_recipe.filter(name__in=resulted_reco_recipe)
-    # print("user가 갖고있는 식자재 객체")
-    # print(user.foods.all())
-    # print("추천레시피가 갖고있는 식자재 객체")
-    # print(reco_food.food.all())
+
+    paginator = Paginator(recipes, 4)
+    page_number = request.GET.get("page")
+    paged_recipes = paginator.get_page(page_number)
 
     context = {
         "user": user,
         "recipes": recipes,
+        "paged_recipes": paged_recipes,
+        "paginator": paginator,
     }
     return render(request, "recipies/recipe_list.html", context)
 
