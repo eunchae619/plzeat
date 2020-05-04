@@ -21,7 +21,7 @@ class SignUpView(mixins.LoggedOutOnlyView, FormView):
     form_class = forms.SignUpForm
     success_url = reverse_lazy("core:home")
     initial = {
-        "email": "eunchae619@naver.com",
+        "email": "eunchae@naver.com",
     }
 
     def form_valid(self, form):
