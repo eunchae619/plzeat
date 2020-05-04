@@ -16,17 +16,19 @@ Home
     <span>내 등록된 식자재</span>
     <a href="{% url 'foods:list' %}"><i class="fas fa-plus-circle food_more"></i></a>
 </div>
-<div class="food_list">
-    {% for food in user.foods.all %}
-    <a href="{% url 'foods:food_detail' food.pk %}">
-        <div class="food_card">
-            <img class="food_img" src="{{food.photo.url}}" alt="img">
-            <span>{{food}}</span>
-            <span>유통기한 : {{food.count_date}}</span>
-            <span>잔량 : {{food.quantity}}개</span>
-        </div>
-    </a>
-    {% endfor %}
+<div class="big_food_list">
+    <div class="food_list">
+        {% for food in foods %}
+        <a href="{% url 'foods:food_detail' food.pk %}">
+            <div class="food_card">
+                <img class="food_img" src="{{food.photo.url}}" alt="img">
+                <span>{{food}}</span>
+                <span>유통기한 : {{food.count_date}}</span>
+                <span>잔량 : {{food.quantity}}개</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
 

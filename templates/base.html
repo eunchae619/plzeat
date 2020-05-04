@@ -26,8 +26,8 @@
     {% endblock header %}
     <div class="wrapper">
         {% block content %}{% endblock content %}
-        {% block bottom_menu %}{% include "partials/bottom_menu.html"%}{% endblock bottom_menu %}
     </div>
+    {% block bottom_menu %}{% include "partials/bottom_menu.html"%}{% endblock bottom_menu %}
 
 
     <script src="{% static 'core/js/menu.js' %}"></script>

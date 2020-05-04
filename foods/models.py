@@ -31,15 +31,23 @@ class Food(models.Model):
 
     def count_date(self):
         cal_date = self.expired_date - timezone.localtime().date()
-        cal_date = str(cal_date)
-
-        if cal_date[0] == "-":
-            return mark_safe(f"<span style='color:red;'>{cal_date[1]}일 지남</span>")
+        cal_date = cal_date.days
+        if cal_date > 0:
+            return f"{cal_date}일 남음"
+        elif cal_date == 0:
+            return "오늘까지"
         else:
-            if cal_date[0] == "0":
-                return "오늘까지"
-            elif int(cal_date[0]) > 0:
-                return f"{cal_date[0]}일 남음"
+            return mark_safe(f"<span style='color:red;'>{abs(cal_date)}일 지남</span>")
+
+        # cal_date = str(cal_date)
+
+        # if cal_date[0] == "-":
+        #     return mark_safe(f"<span style='color:red;'>{cal_date[1]}일 지남</span>")
+        # else:
+        #     if cal_date[0] == "0":
+        #         return "오늘까지"
+        #     elif int(cal_date[0]) > 0:
+        #         return f"{cal_date[0]}일 남음"
 
     def __str__(self):
         return self.name
