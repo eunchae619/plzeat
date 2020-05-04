@@ -44,6 +44,7 @@ header {
 .header_title {
     display: flex;
     align-items: center;
+    color: #ff8100;
 }
 
 .header_title>img {
@@ -52,8 +53,8 @@ header {
 }
 
 .header_title>span {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 
@@ -64,10 +65,12 @@ nav
 */
 nav {
     z-index: 100;
+    display: flex;
+    align-items: center;
 }
 
 nav>img {
-    height: 50px;
+    height: 40px;
 }
 
 nav>img:hover {
@@ -82,16 +85,32 @@ hidden_menu
 */
 .hidden_menu {
     height: 100vh;
-    background-color: #dddddd;
+    background-color: #fffffa;
     width: 400px;
     position: fixed;
     top: 0;
     right: -400px;
     transition: right 0.5s ease;
+
 }
 
 .jsClickedHiddenMenu {
-    right: 0;
+    right: 0 !important;
+}
+
+.menu_top {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+}
+
+.power-off {
+    font-size: 2.5rem;
+    color: #ff9393;
 }
 
 /*
@@ -168,4 +187,11 @@ bottom_menu
 
 .bottom_menu>a:hover {
     background-color: burlywood;
+}
+
+@media(max-width:500px) {
+    .hidden_menu {
+        width: 100vw;
+        right: -100vw;
+    }
 }
