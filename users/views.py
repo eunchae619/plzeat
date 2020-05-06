@@ -6,21 +6,22 @@ from django.contrib.auth import authenticate, login, logout
 from . import forms
 from . import models
 from django.views.generic.edit import FormView
+from core import mixins
 
 # Create your views here.
 
 
 def log_out(request):
     logout(request)
-    return redirect(reverse("core:home"))
+    return redirect(reverse("core:login"))
 
 
-class SignUpView(FormView):
+class SignUpView(mixins.LoggedOutOnlyView, FormView):
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
     success_url = reverse_lazy("core:home")
     initial = {
-        "email": "eunchae619@naver.com",
+        "email": "eunchae@naver.com",
     }
 
     def form_valid(self, form):

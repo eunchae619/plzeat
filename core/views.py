@@ -4,14 +4,16 @@ from users import models as users_models
 from django.views import View
 from django.contrib.auth import authenticate, login
 from users import forms
+from . import mixins
 
 
 def home(request):
-    users = users_models.User.objects.all()
-    return render(request, "main/home.html", {"users": users})
+    user = users_models.User.objects.get(pk=request.user.pk)
+    foods = user.foods.all().order_by("expired_date")[:4]
+    return render(request, "main/home.html", {"foods": foods})
 
 
-class LoginView(View):
+class LoginView(mixins.LoggedOutOnlyView, View):
     def get(self, request):
         form = forms.LoginForm()
         return render(request, "users/login.html", {"form": form})

@@ -4,7 +4,7 @@ from . import models
 
 class LoginForm(forms.Form):
 
-    email = forms.EmailField(initial="eunchae619@naver.com")
+    email = forms.EmailField(initial="test@a.com")
     password = forms.CharField(widget=forms.PasswordInput)
 
     def clean(self):

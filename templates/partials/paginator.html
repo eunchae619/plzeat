@@ -1,0 +1,11 @@
+<div class="paginator">
+    <div class="page_center">
+        {% for page in paginator.page_range %}
+        <a href="?page={{page}}">
+            <div class="page">
+                {{page}}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>

@@ -13,20 +13,21 @@
 
     <!-- Font link -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
 
 <body>
     {% block header %}
-        <header>
-            {% include "partials/header.html" %}
-            {% include "partials/nav.html" %}
-            {% include "partials/hidden_menu.html" %}
-        </header>
+    <header>
+        {% include "partials/header.html" %}
+        {% include "partials/nav.html" %}
+        {% include "partials/hidden_menu.html" %}
+    </header>
     {% endblock header %}
     <div class="wrapper">
         {% block content %}{% endblock content %}
-        {% include "partials/footer.html" %}
     </div>
+    {% block bottom_menu %}{% include "partials/bottom_menu.html"%}{% endblock bottom_menu %}
 
 
     <script src="{% static 'core/js/menu.js' %}"></script>
