@@ -1,5 +1,20 @@
+.recipe_list_box{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+
+.recipe_list_box > h3{
+    text-align: center;
+}
+
 .recipe_img {
-    width: 100px;
-    height: 100px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto; 
+
+    width: 200px;
+    height: 200px;
 }
 

@@ -13,6 +13,7 @@ Recommandation
 
 
 {% block content %}
+<div class="content_area">
 <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
 <h3>{{recipe.name}}</h3>
 <hr>
@@ -23,6 +24,7 @@ Recommandation
     {% endfor %}
 </ul>
 <p>만드는 법 : {{recipe.how_to_create}}</p>
+</div>
 {% endblock content %}
 
 
