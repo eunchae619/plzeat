@@ -14,7 +14,7 @@ body {
 .wrapper {
     position: static;
     width: auto;
-    height: auto;
+    height: 60vh;
     padding: 2rem;
     border-radius: 10px;
     background-color: #fff9eb;
@@ -89,4 +89,49 @@ input[type="password"] {
     font-size: 1.1rem;
     color: #ff4700;
     font-family: 'NanumSquare', sans-serif;
+}
+
+@media(max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 500px) {
+    html {
+        font-size: 12px;
+    }
+
+    .file-upload-image {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    input {
+        font-size: 1.5rem !important;
+    }
+
+    .login_btn {
+        font-size: 1.5rem !important;
+    }
+
+    .login_ask_have {
+        font-size: 1.5rem !important;
+    }
+
+    .signup_link {
+        font-size: 1.5rem !important;
+    }
+
+    .image-title-wrap span {
+        font-size: 1.5rem !important;
+    }
+
+
+}
+
+@media(max-width: 400px) {
+    html {
+        font-size: 11px;
+    }
 }
