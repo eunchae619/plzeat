@@ -1,21 +1,20 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView
+from django.core.paginator import Paginator
 from users import models as users_model
 from . import models as foods_model, forms
 
 # Create your views here.
 
 
-class FoodList(ListView):
-    model = foods_model.Food
-    paginate_by = 4
-    ordering = "created"
-    context_object_name = "foods"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+def food_list(request):
+    page = request.GET.get("page")
+    food_list = foods_model.Food.objects.filter(user=request.user.pk)
+    paginator = Paginator(food_list, 3)
+    foods = paginator.get_page(page)
+    context = {"foods": foods, "paginator": paginator}
+    return render(request, "foods/food_list.html", context)
 
 
 def food_detail(request, pk):

@@ -2,3 +2,8 @@
     width: 100px;
     height: 100px;
 }
+
+.food_card {
+    display: flex;
+    flex-direction: column;
+}
