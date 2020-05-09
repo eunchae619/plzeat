@@ -6,13 +6,13 @@ Sign Up
 {% endblock page_title %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static '/users/css/signup.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
 {% endblock css %}
 
 {% block header %}{% endblock header %}
 
 {% block content %}
-<form method="POST" action="{% url 'users:signup' %}">
+<form class="login_form" method="POST" action="{% url 'users:signup' %}">
     {% csrf_token %}
 
         {% if form.none_field_errors %}

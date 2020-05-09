@@ -14,7 +14,7 @@ Login
 {% block header %}{% endblock header %}
 
 {% block content %}
-<form method="POST" action="{% url 'core:login' %}">
+<form class="login_form" method="POST" action="{% url 'core:login' %}">
     {% csrf_token %}
 
     {% if form.none_field_errors %}

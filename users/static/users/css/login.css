@@ -23,17 +23,31 @@ body {
     align-items: center;
 }
 
+.login_form {
+    width: 27rem;
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+.error {
+    margin-left: 0.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: red;
+}
+
 .input>input {
     border-radius: 5px;
     border-color: #ffeed4;
     width: 27rem;
     height: 3rem;
     padding: 0.5rem;
-    margin-bottom: 1rem;
 }
 
 .input>input::placeholder {
-    color: #ffd486;
+    color: #ffd779;
 }
 
 .login_btn {
@@ -42,7 +56,7 @@ body {
     padding: 0.5rem;
     border-radius: 5px;
     font-weight: bolder;
-    color: #ff974e;
+    color: #ff4700;
 }
 
 .login_hr {
@@ -53,11 +67,12 @@ body {
 .login_ask_have {
     margin-right: .5rem;
     font-size: 1.1rem;
-    color: #ffd486;
+    color: #ff8100;
 }
 
 .signup_link {
     font-weight: bolder;
     font-size: 1.1rem;
-    color: #ff974e;
+    color: #ff4700;
+
 }
