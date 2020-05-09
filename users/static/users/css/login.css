@@ -32,8 +32,8 @@ body {
     margin-bottom: 1rem;
 }
 
-.input>input:focus {
-    border-color: #ffc721;
+.input>input::placeholder {
+    color: #ffd486;
 }
 
 .login_btn {
@@ -42,7 +42,7 @@ body {
     padding: 0.5rem;
     border-radius: 5px;
     font-weight: bolder;
-    color: #ff6a00;
+    color: #ff974e;
 }
 
 .login_hr {
@@ -53,11 +53,11 @@ body {
 .login_ask_have {
     margin-right: .5rem;
     font-size: 1.1rem;
-    color: #ffb27c;
+    color: #ffd486;
 }
 
 .signup_link {
     font-weight: bolder;
     font-size: 1.1rem;
-    color: #ff6a00;
+    color: #ff974e;
 }
