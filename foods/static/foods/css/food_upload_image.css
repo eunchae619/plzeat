@@ -5,6 +5,10 @@
     background-color: white;
 }
 
+.inside_menu {
+    font-size: 17.6px !important;
+}
+
 input {}
 
 input::placeholder {}
