@@ -16,14 +16,30 @@ Login
 {% block content %}
 <form method="POST" action="{% url 'core:login' %}">
     {% csrf_token %}
-    {{form.as_p}}
-    {% if not_verified is not None %}
-    <ul class="errorlist">
-        <li>{{not_verified}}</li>
-    </ul>
+
+    {% if form.none_field_errors %}
+        {% for error in none_field_errors  %}
+            <span class="field_error">{{error}}</span>
+        {% endfor %}
     {% endif %}
-    <button>Login</button>
-    <a href="{% url 'users:signup' %}">회원가입 하기</a>
+
+    {% for field in form  %}
+        <div class="input {% if field.errors %}has_error{% endif %}">
+            {{field}}
+            {% if field.errors %}
+                {% for error in field.errors  %}
+                    <span class="error">{{error}}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+    {% endfor %}
+    <button class="login_btn">로그인</button>
+    <hr class="login_hr">
+    <div class="go_to_signup">
+        <span class="login_ask_have">계정이 없으세요?</span>
+        <a href="{% url 'users:signup' %}"><span class="signup_link">회원 가입</span></a>
+    </div>
 
 </form>
 <br><br><br>

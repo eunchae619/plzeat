@@ -19,6 +19,40 @@ a {
 
 
 
+input {
+    border: none;
+    border-style: solid;
+    border-width: thin;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #ffd486;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transform: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+
 
 /*
 *
