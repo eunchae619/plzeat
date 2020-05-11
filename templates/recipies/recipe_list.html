@@ -1,20 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block page_title %}
 '{{user}}'님을 위한 추천레시피
 {% endblock page_title %}
-
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'recipies/css/recipe_list.css' %}" type="text/css">
 {% endblock css %}
 
-
-
 {% block content %}
-{% for recipe in paged_recipes  %}
+
+{% for recipe in recipes %}
 <a href="{% url 'recipies:recipe_detail' recipe.pk %}">
-    <div>
+    <div class="recipe_list_box">
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
         <h3>{{recipe.name}}</h3>
     </div>
@@ -22,7 +21,6 @@
 {% endfor %}
 
 {% include "partials/paginator.html" %}
-
 
 {% endblock content %}
 

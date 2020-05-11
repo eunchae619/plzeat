@@ -13,16 +13,18 @@ Recommandation
 
 
 {% block content %}
-<img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
-<h3>{{recipe.name}}</h3>
-<hr>
-<h3>들어가는 재료</h3>
-<ul>
-    {% for food in recipe.food.all %}
-    <li>{{food.name}}</li>
-    {% endfor %}
-</ul>
-<p>만드는 법 : {{recipe.how_to_create|linebreaks}}</p>
+<div class="content_area">
+    <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
+    <h3>{{recipe.name}}</h3>
+    <hr>
+    <h3>들어가는 재료</h3>
+    <ul>
+        {% for food in recipe.food.all %}
+        <li>{{food.name}}</li>
+        {% endfor %}
+    </ul>
+    <p>만드는 법 : {{recipe.how_to_create}}</p>
+</div>
 {% endblock content %}
 
 
