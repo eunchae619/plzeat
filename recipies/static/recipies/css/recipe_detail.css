@@ -1,4 +1,10 @@
+.content_area {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .recipe_img {
-    width: 100px;
-    height: 100px;
+    text-align: center;
+    width: 400px;
+    height: 400px;
 }

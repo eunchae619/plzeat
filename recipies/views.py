@@ -23,7 +23,7 @@ def recipe_list(request, pk):
             resulted_reco_recipe.append(reco_food.name)
     recipes = reco_recipe.filter(name__in=resulted_reco_recipe)
 
-    paginator = Paginator(recipes, 4)
+    paginator = Paginator(recipes, 10)
     page_number = request.GET.get("page")
     paged_recipes = paginator.get_page(page_number)
 

@@ -6,62 +6,13 @@
 {% endblock page_title %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
-<link rel="stylesheet" href="{% static '/foods/css/food_upload_image.css' %}" type="text/css">
-<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 {% endblock css %}
 
 
 {% block content %}
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% if form.none_field_errors %}
-    {% for error in none_field_errors  %}
-    <span class="field_error">{{error}}</span>
-    {% endfor %}
-    {% endif %}
-
-    {% for field in form  %}
-    <div class="input {% if field.errors %}has_error{% endif %}">
-        {% if field.name == 'photo' %}
-        <div class="file-upload">
-
-            <div class="image-upload-wrap">
-                <input class="file-upload-input" type='file' name="photo" onchange="readURL(this);" accept="image/*"
-                    id="id_photo" />
-                <div class="drag-text">
-                    <h3>클릭하거나 드래그하여 사진을 업로드 하세요!</h3>
-                </div>
-            </div>
-            <div class="file-upload-content">
-                <img class="file-upload-image" src="#" alt="your image" />
-                <div class="two_button">
-                    <button class="login_btn file-upload-btn " type="button"
-                        onclick="$('.file-upload-input').trigger( 'click' )">이미지
-                        변경</button>
-                    <div class="image-title-wrap">
-                        <button type="button" onclick="removeUpload()" class="remove-image"><span
-                                style="font-family: 'NanumSquare', sans-serif; font-size: 1.1rem;">이미지 삭제</span> <span
-                                class="login_btn image-title">Uploaded Image</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% else %}
-        {{field}}
-        {% endif %}
-        {% if field.errors %}
-        {% for error in field.errors  %}
-        <span class="error">{{error}}</span>
-        {% endfor %}
-        {% endif %}
-    </div>
-    {% endfor %}
-    <button class="login_btn">식자재 등록</button>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
 </form>
 {% endblock content %}
-
-{% block script %}
-<script src="{% static '/foods/js/food_upload_image.js' %}"></script>
-{% endblock script %}
