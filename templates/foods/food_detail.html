@@ -13,23 +13,23 @@
 {% block content %}
 <img class="food_img" src="{{food.photo.url}}" alt="img">
 <div class="food_detail_text">
-<h1>{{food.name}}</h1>
-<p>잔량 : {{food.quantity}}개</p>
-<p>유통기한 : {{food.count_date}}</p>
-<hr>
+    <h1>{{food.name}}</h1>
+    <p>잔량 : {{food.quantity}}개</p>
+    <p>유통기한 : {{food.count_date}}</p>
+    <hr>
 
 
-{% if how_to_store %}
-<h2>식자재 보관법</h2>
-<p>{{how_to_store|linebreaks}}</p>
-<h2>식자재 손질법</h2>
-<p>{{how_to_trim|linebreaks}}</p>
+    {% if how_to_store %}
+    <h2>식자재 보관법</h2>
+    <p>{{how_to_store|linebreaks}}</p>
+    <h2>식자재 손질법</h2>
+    <p>{{how_to_trim|linebreaks}}</p>
 
-{% endif %}
-<a href=javascript:history.go(-1)>
+    {% endif %}
+    <a href=javascript:history.go(-1)>
 
-<img class="back_img" src="{{food.photo.url}}" alt="img">
-</a>
+        <img class="back_img" src="{{food.photo.url}}" alt="img">
+    </a>
 </div>
 
 {% endblock content %}

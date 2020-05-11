@@ -46,3 +46,9 @@ class FoodRegisterView(CreateView):
         food.user = self.request.user
         food.save()
         return super().form_valid(form)
+
+
+def food_delete(request, pk):
+    food = foods_model.Food.objects.get(pk=pk)
+    food.delete()
+    return redirect(reverse("foods:list"))
