@@ -15,28 +15,28 @@ Sign Up
 <form class="login_form" method="POST" action="{% url 'users:signup' %}">
     {% csrf_token %}
 
-        {% if form.none_field_errors %}
-        {% for error in none_field_errors  %}
-            <span class="field_error">{{error}}</span>
-        {% endfor %}
+    {% if form.none_field_errors %}
+    {% for error in none_field_errors  %}
+    <span class="field_error">{{error}}</span>
+    {% endfor %}
     {% endif %}
 
     {% for field in form  %}
-        <div class="input {% if field.errors %}has_error{% endif %}">
-            {{field}}
-            {% if field.errors %}
-                {% for error in field.errors  %}
-                    <span class="error">{{error}}</span>
-                {% endfor %}
-            {% endif %}
-        </div>
+    <div class="input {% if field.errors %}has_error{% endif %}">
+        {{field}}
+        {% if field.errors %}
+        {% for error in field.errors  %}
+        <span class="error">{{error}}</span>
+        {% endfor %}
+        {% endif %}
+    </div>
 
     {% endfor %}
     <button class="login_btn">회원 가입</button>
     <hr class="login_hr">
     <div class="go_to_signup">
         <span class="login_ask_have">이미 계정이 있으세요?</span>
-        <a href="{% url 'core:login' %}"><span class="signup_link">로그인으로</span></a>
+        <a href="{% url 'core:login' %}"><span class="signup_link">로그인</span></a>
     </div>
 
 </form>
