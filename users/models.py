@@ -35,3 +35,9 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
         email_verified = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        splited = self.email.split("@")
+        splited = splited[0]
+        self.nickname = splited
+        super().save(*args, **kwargs)

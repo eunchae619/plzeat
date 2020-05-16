@@ -64,7 +64,56 @@ button:focus {
 
 
 
+/*
+*
+messages
+*
+*/
+.msg_big {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+    z-index: 100;
+    animation: messageFadeIn 5s ease-in-out forwards;
+}
 
+.msg {
+    border-width: thin;
+    background-color: #ff763b;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+@keyframes messageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    95% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
 
 /*
 *
@@ -110,7 +159,7 @@ nav
 *
 */
 nav {
-    z-index: 100;
+    z-index: 10000;
     display: flex;
     align-items: center;
 }

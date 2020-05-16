@@ -3,10 +3,10 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth import authenticate, login, logout
-from . import forms
-from . import models
 from django.views.generic.edit import FormView
+from django.contrib import messages
 from core import mixins
+from . import forms, models
 
 # Create your views here.
 
@@ -29,6 +29,7 @@ class SignUpView(mixins.LoggedOutOnlyView, FormView):
         user = authenticate(self.request, username=email, password=password)
         if user is not None:
             login(self.request, user)
+            messages.success(self.request, f"환영합니다, {user.nickname}님!")
         # user.verify_email()
         return super().form_valid(form)
 
