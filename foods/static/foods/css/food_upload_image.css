@@ -196,6 +196,38 @@ h3 {
     color: white;
 }
 
+.quantity_input {
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #ffeed4;
+    align-items: center;
+}
+
+.wrap_caret {
+    width: 10%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffc992;
+}
+
+.wrap_caret:hover {
+    cursor: pointer;
+}
+
+.q1 {
+    width: 80% !important;
+    text-align: center;
+    border: none;
+}
+
+.q1::placeholder {
+    text-align: center;
+}
+
 @media(max-width: 600px) {
     html {
         font-size: 14px;

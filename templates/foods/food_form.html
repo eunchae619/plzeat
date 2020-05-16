@@ -51,6 +51,13 @@
         </div>
         {% elif field.name == 'expired_date' %}
         {{ field }}
+        {% elif field.name == 'quantity' %}
+        <div class="input quantity_input">
+            <div class="jsLeft wrap_caret"><i class="fas fa-minus caret"></i></div>
+            <input value="1" class="jsQuantity q1" type="number" name="quantity" placeholder="갯수" required=""
+                id="id_quantity">
+            <div class="jsRight wrap_caret"><i class="fas fa-plus caret"></i></div>
+        </div>
         {% else %}
         {{field}}
         {% endif %}
@@ -67,4 +74,5 @@
 
 {% block script %}
 <script src="{% static '/foods/js/food_upload_image.js' %}"></script>
+<script src="{% static '/foods/js/quantity_button.js' %}"></script>
 {% endblock script %}
