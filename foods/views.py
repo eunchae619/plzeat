@@ -23,6 +23,8 @@ def food_list(request):
 
 def food_detail(request, pk):
     food = foods_model.Food.objects.get(pk=pk)
+    if food.user != request.user:
+        return redirect(reverse("core:login"))
     food_data = foods_model.HowToUseFood.objects.all()
     how_to_trim = ""
     how_to_store = ""
