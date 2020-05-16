@@ -25,7 +25,10 @@ def food_list(request):
 
 
 def food_detail(request, pk):
-    food = foods_model.Food.objects.get(pk=pk)
+    try:
+        food = foods_model.Food.objects.get(pk=pk)
+    except foods_model.Food.DoesNotExist:
+        return redirect(reverse("core:home"))
     if food.user != request.user:
         return redirect(reverse("core:login"))
     food_data = foods_model.HowToUseFood.objects.all()
