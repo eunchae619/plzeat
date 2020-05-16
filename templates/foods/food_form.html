@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_title %}
 식자재 등록
 {% endblock page_title %}
@@ -9,19 +10,24 @@
 <link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/foods/css/food_upload_image.css' %}" type="text/css">
 <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+{% load bootstrap4 %} {# import bootstrap4 / bootstrap3 #}
+{% bootstrap_css %} {# 임베디드 부트 스트랩 CSS #}
+{% bootstrap_javascript jquery='full'%} {# 부트 스트랩 JS + jQuery #}
+{{form.media}}
 {% endblock css %}
 
 
 {% block content %}
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {% if form.none_field_errors %}
+
+    {% if my_form.none_field_errors %}
     {% for error in none_field_errors  %}
     <span class="field_error">{{error}}</span>
     {% endfor %}
     {% endif %}
-
-    {% for field in form  %}
+    {% for field in my_form  %}
     <div class="input {% if field.errors %}has_error{% endif %}">
         {% if field.name == 'photo' %}
         <div class="file-upload">
@@ -43,6 +49,8 @@
                 </div>
             </div>
         </div>
+        {% elif field.name == 'expired_date' %}
+        {{ field }}
         {% else %}
         {{field}}
         {% endif %}

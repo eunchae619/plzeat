@@ -49,6 +49,7 @@ class FoodRegisterView(CreateView, mixins.LoggedInOnlyView):
     model = foods_model.Food
     form_class = forms.FoodRegisterForm
     success_url = reverse_lazy("core:home")
+    context_object_name = "my_form"
 
     def form_valid(self, form):
         food = form.save(commit=False)
@@ -67,6 +68,11 @@ class FoodRegisterView(CreateView, mixins.LoggedInOnlyView):
         if self.request.user.is_anonymous:
             return redirect(reverse("core:login"))
         return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(FoodRegisterView, self).get_context_data(**kwargs)
+        context["my_form"] = context["form"]
+        return context
 
 
 def food_delete(request, pk):

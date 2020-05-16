@@ -101,12 +101,17 @@ input::placeholder {}
 }
 
 .drag-text h3 {
-    font-weight: 100;
+    font-weight: 100 !important;
     text-transform: uppercase;
     padding: 60px 0;
     font-family: 'NanumSquare', sans-serif;
-    font-weight: bold;
+    font-weight: bold !important;
     color: #ffd779;
+    font-size: 1.2rem !important;
+}
+
+h3 {
+    font-weight: 100 !important;
 }
 
 .file-upload-image {
@@ -150,6 +155,36 @@ input::placeholder {}
     padding: 0;
 }
 
+.input-group input {
+    border: none;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #ffeed4;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    height: 3.3rem;
+}
+
+.input-group input::placeholder {
+    color: #ffd779;
+    font-family: 'NanumSquare', sans-serif;
+}
+
+
+
+.input-group-text {
+    background-color: #ffc992 !important;
+    border-style: solid !important;
+    border-width: thin !important;
+    border-radius: 0 5px 5px 0 !important;
+    border-color: #ffeed4 !important;
+}
+
+
+.input-group-text i {
+    color: white;
+}
 
 @media(max-width: 600px) {
     html {
