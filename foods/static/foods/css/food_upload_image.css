@@ -35,7 +35,8 @@ input::placeholder {}
 
 .file-upload-btn {
     width: 40%;
-    background: darkblue;
+    background: #ff3b3b;
+    margin-bottom: 10px;
 }
 
 .file-upload-btn:hover {
@@ -113,6 +114,7 @@ input::placeholder {}
     max-width: 130px;
     margin: auto;
     display: block;
+    padding-bottom: 5px;
 }
 
 .remove-image {
