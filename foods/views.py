@@ -11,8 +11,9 @@ from . import models as foods_model, forms
 # Create your views here.
 
 
-@login_required
 def food_list(request):
+    if request.user.is_anonymous:
+        return redirect(reverse("core:login"))
     page = request.GET.get("page")
     food_list = foods_model.Food.objects.filter(user=request.user.pk)
     paginator = Paginator(food_list, 3)
