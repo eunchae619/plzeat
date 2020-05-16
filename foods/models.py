@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
-from users import models as users_models
 from django.utils.html import mark_safe
+from users import models as users_models
+from . import models as foods_models
+
 
 # Create your models here.
 

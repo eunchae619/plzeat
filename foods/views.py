@@ -3,6 +3,8 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
+from django import forms as django_forms
 from users import models as users_model
 from core import mixins
 from . import models as foods_model, forms
@@ -50,15 +52,20 @@ class FoodRegisterView(CreateView, mixins.LoggedInOnlyView):
 
     def form_valid(self, form):
         food = form.save(commit=False)
-        food.user = self.request.user
-        food.save()
-        return super().form_valid(form)
+        my_food = foods_model.Food.objects.filter(user=self.request.user.pk)
+        filtered_food = my_food.filter(name=food.name)
+        if filtered_food:
+            form.add_error("name", "이미 존재하는 식자재입니다")
+            return self.form_invalid(form)
+        else:
+            food.user = self.request.user
+            food.save()
+            return super().form_valid(form)
 
     def get(self, request, *args, **kwargs):
         self.object = None
         if self.request.user.is_anonymous:
             return redirect(reverse("core:login"))
-        print(self.request.user)
         return super().get(request, *args, **kwargs)
 
 
