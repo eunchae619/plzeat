@@ -7,6 +7,7 @@ from . import models as recipies_model
 
 def recipe_list(request, pk):
     user = users_model.User.objects.get(pk=pk)
+    user_foods = user.foods.all()
     user_food_list = []
     for food in user.foods.all():
         user_food_list.append(food.name)
