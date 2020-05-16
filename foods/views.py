@@ -2,12 +2,16 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from users import models as users_model
+from core import mixins
 from . import models as foods_model, forms
+
 
 # Create your views here.
 
 
+@login_required
 def food_list(request):
     page = request.GET.get("page")
     food_list = foods_model.Food.objects.filter(user=request.user.pk)
@@ -36,7 +40,7 @@ def food_detail(request, pk):
     return render(request, "foods/food_detail.html", context)
 
 
-class FoodRegisterView(CreateView):
+class FoodRegisterView(CreateView, mixins.LoggedInOnlyView):
     model = foods_model.Food
     form_class = forms.FoodRegisterForm
     success_url = reverse_lazy("core:home")
@@ -46,6 +50,13 @@ class FoodRegisterView(CreateView):
         food.user = self.request.user
         food.save()
         return super().form_valid(form)
+
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        if self.request.user.is_anonymous:
+            return redirect(reverse("core:login"))
+        print(self.request.user)
+        return super().get(request, *args, **kwargs)
 
 
 def food_delete(request, pk):
