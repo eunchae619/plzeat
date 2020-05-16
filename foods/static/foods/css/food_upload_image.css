@@ -1,3 +1,9 @@
+a:hover {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    color: black !important;
+}
+
 .wrapper {
     top: 15vh;
     width: 100vw;
