@@ -1,26 +1,52 @@
-@media screen and (min-width: 768px) {	
-	.reactivetest { 
-		display:flex; -webkit-flex:auto; -moz-display:flex; -ms-display:flex; 
-		flex-wrap:wrap; -webkit-flex-wrap:wrap; -moz-flex-wrap:wrap; -ms-flex-wrap:wrap; 
-	}
-	.reactivetest > span { padding: 4px; } 
-	.reactivetest > span > .imageblock:not(:last-child) { vertical-align: baseline; } 
-    .reactivetest .imageblock { padding:0; } 
-	.reactivetest img { box-shadow: none; }
-}
-@media screen and (max-width: 767px) { 
-	.reactivetest > span { padding: 0; width: 100% !important; }  
-	.reactivetest .imageblock { padding: 16px 0; } 
-	.reactivetest  > span:first-of-type .imageblock:first-of-type { padding-top: 8px; }
-	.reactivetest  > span:last-of-type .imageblock:last-of-type { padding-bottom: 4px; }
+  
+@media screen and (min-width: 768px) {
+    .reactivetest {
+        display: flex;
+        -webkit-flex: auto;
+        -moz-display: flex;
+        -ms-display: flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+    }
+
+    .reactivetest>span {
+        padding: 4px;
+    }
+
+    .reactivetest>span>.imageblock:not(:last-child) {
+        vertical-align: baseline;
+    }
+
+    .reactivetest .imageblock {
+        padding: 0;
+    }
+
+    .reactivetest img {
+        box-shadow: none;
+    }
 }
 
-.page_food_list {
-    display: float;
-    align-items: center;
-    height: 70vh;
+@media screen and (max-width: 767px) {
+    .reactivetest>span {
+        padding: 0;
+        width: 100% !important;
+    }
 
+    .reactivetest .imageblock {
+        padding: 16px 0;
+    }
+
+    .reactivetest>span:first-of-type .imageblock:first-of-type {
+        padding-top: 8px;
+    }
+
+    .reactivetest>span:last-of-type .imageblock:last-of-type {
+        padding-bottom: 4px;
+    }
 }
+
 .food_list {
     display: flex;
     flex-wrap: wrap;
@@ -29,13 +55,13 @@
 }
 
 .food_img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 
 .food_card {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 130px;
     margin: 10px;
     margin-bottom: 10px;
     display: flex;
@@ -43,4 +69,16 @@
     align-items: center;
     justify-content: center;
     background-color: #FAFAFA;
+}
+
+
+.card_xbox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.card_xbox i {
+    color: #ff7d7d;
 }

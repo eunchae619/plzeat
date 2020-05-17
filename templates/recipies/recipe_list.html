@@ -1,28 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block page_title %}
 '{{user}}'님을 위한 추천레시피
 {% endblock page_title %}
-
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'recipies/css/recipe_list.css' %}" type="text/css">
 {% endblock css %}
 
-
-
 {% block content %}
-{% for recipe in paged_recipes  %}
+<div class="recipe_list">
+{% for recipe in paged_recipes %}
+
 <a href="{% url 'recipies:recipe_detail' recipe.pk %}">
-    <div>
+    <div class="recipe_card">
+        <div class="card_hide">
+            <i class="fas fa-eye-slash"></i>
+        </div>
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
-        <h3>{{recipe.name}}</h3>
+        <div class="text_test">{{recipe.name}}</div>
     </div>
+
 </a>
+
 {% endfor %}
+</div>
+
 
 {% include "partials/paginator.html" %}
-
 
 {% endblock content %}
 

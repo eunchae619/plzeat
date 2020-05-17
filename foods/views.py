@@ -11,7 +11,7 @@ from . import models as foods_model, forms
 def food_list(request):
     page = request.GET.get("page")
     food_list = foods_model.Food.objects.filter(user=request.user.pk)
-    paginator = Paginator(food_list, 3)
+    paginator = Paginator(food_list, 6)
     foods = paginator.get_page(page)
     context = {"foods": foods, "paginator": paginator}
     return render(request, "foods/food_list.html", context)
