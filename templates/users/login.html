@@ -22,8 +22,17 @@ Login
     <span class="field_error">{{error}}</span>
     {% endfor %}
     {% endif %}
-    <a href="{% url 'users:kakao-login' %}">카카오톡 계정으로 로그인</a>
-    <hr>
+    <a href="{% url 'users:kakao-login' %}">
+        <div class="social_login">
+            <i class="fas fa-comment mr-1"></i>
+            <span>카카오 계정으로 로그인</span>
+        </div>
+    </a>
+    <div class="or_line">
+        <hr>
+        <span>or</span>
+        <hr>
+    </div>
     {% for field in form  %}
     <div class="input {% if field.errors %}has_error{% endif %}">
         {{field}}
@@ -43,6 +52,5 @@ Login
     </div>
 
 </form>
-<br><br><br>
 {% endblock content %}
 {% block bottom_menu %}{% endblock bottom_menu %}

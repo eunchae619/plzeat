@@ -28,6 +28,47 @@ body {
     width: 27rem;
 }
 
+.social_login {
+    height: 3.3rem;
+    background-color: #f6e05e;
+    border-radius: 5px;
+    border-color: #ecc94b;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b7791f;
+    margin-bottom: 1rem;
+}
+
+.social_login>i {
+    margin-right: 0.5rem;
+}
+
+.social_login>span {
+    font-weight: bold;
+}
+
+.or_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.or_line>hr {
+    width: 47%;
+    border-color: #ff81001c;
+    ;
+}
+
+.or_line>span {
+    width: 6%;
+    font-weight: bold;
+    text-align: center;
+    color: #ff8100;
+}
+
 .input {
     margin-bottom: 1rem;
 }
@@ -110,6 +151,14 @@ input[type="password"] {
 
     input {
         font-size: 1.5rem !important;
+    }
+
+    .social_login {
+        font-size: 1.3rem !important;
+    }
+
+    .or_line>span {
+        font-size: 1.2rem !important;
     }
 
     .login_btn {
