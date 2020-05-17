@@ -159,13 +159,13 @@ nav
 *
 */
 nav {
-    z-index: 10000;
     display: flex;
     align-items: center;
 }
 
 nav>img {
     height: 40px;
+    z-index: 10000;
 }
 
 nav>img:hover {

@@ -10,9 +10,20 @@ from django.template.loader import render_to_string
 
 
 class User(AbstractUser):
+    LOGIN_EMAIL = "email"
+    LOGIN_KAKAO = "kakao"
+    LOGIN_CHOICES = (
+        (LOGIN_EMAIL, "Email"),
+        (LOGIN_KAKAO, "Kakao"),
+    )
+
     email_verified = models.BooleanField(default=True)
     email_secret = models.CharField(max_length=120, default="", blank=True)
     nickname = models.CharField(max_length=100, null=True)
+    login_method = models.CharField(
+        max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
+    )
+    email_verified = models.BooleanField(default=True)
 
     def verify_email(self):
         if self.email_verified is False:
@@ -34,7 +45,6 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
-        email_verified = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         splited = self.email.split("@")

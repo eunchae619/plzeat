@@ -18,20 +18,21 @@ Login
     {% csrf_token %}
 
     {% if form.none_field_errors %}
-        {% for error in none_field_errors  %}
-            <span class="field_error">{{error}}</span>
-        {% endfor %}
+    {% for error in none_field_errors  %}
+    <span class="field_error">{{error}}</span>
+    {% endfor %}
     {% endif %}
-
+    <a href="{% url 'users:kakao-login' %}">카카오톡 계정으로 로그인</a>
+    <hr>
     {% for field in form  %}
-        <div class="input {% if field.errors %}has_error{% endif %}">
-            {{field}}
-            {% if field.errors %}
-                {% for error in field.errors  %}
-                    <span class="error">{{error}}</span>
-                {% endfor %}
-            {% endif %}
-        </div>
+    <div class="input {% if field.errors %}has_error{% endif %}">
+        {{field}}
+        {% if field.errors %}
+        {% for error in field.errors  %}
+        <span class="error">{{error}}</span>
+        {% endfor %}
+        {% endif %}
+    </div>
 
     {% endfor %}
     <button class="login_btn">로그인</button>

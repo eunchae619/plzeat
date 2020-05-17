@@ -13,7 +13,10 @@ class FoodInline(admin.TabularInline):
 @admin.register(models.User)
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
-        ("Personal Info", {"fields": ("username", "email", "nickname", "password",)},),
+        (
+            "Personal Info",
+            {"fields": ("username", "email", "nickname", "password", "login_method",)},
+        ),
         ("About Email", {"fields": ("email_verified",)},),
         (
             "Permissions",
