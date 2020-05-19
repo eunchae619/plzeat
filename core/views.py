@@ -3,11 +3,14 @@ from django.urls import reverse
 from users import models as users_models
 from django.views import View
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from users import forms
 from . import mixins
 
 
 def home(request):
+    if request.user.is_anonymous:
+        return redirect(reverse("core:login"))
     user = users_models.User.objects.get(pk=request.user.pk)
     foods = user.foods.all().order_by("expired_date")[:4]
     return render(request, "main/home.html", {"foods": foods})
@@ -30,6 +33,7 @@ class LoginView(mixins.LoggedOutOnlyView, View):
                 pk = check_user.pk
                 if check_user.email_verified is True:
                     login(request, user)
+                    messages.success(request, f"환영합니다, {user.nickname}님!")
                     return redirect(reverse("core:home"))
                 else:
                     not_verified = "이메일 인증을 해주세요."

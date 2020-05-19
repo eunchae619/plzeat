@@ -2,9 +2,11 @@
     <a href="{% url 'foods:register' %}">
         <div class="inside_menu">식자재 등록</div>
     </a>
+    {% if user.is_active %}
     <a href="{% url 'recipies:recipe_list' user.pk %}">
         <div class="inside_menu">추천 레시피 목록</div>
     </a>
+    {% endif %}
     <a>
         <div class="inside_menu">식자재 관리법</div>
     </a>

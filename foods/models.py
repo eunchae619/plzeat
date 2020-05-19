@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils import timezone
-from users import models as users_models
 from django.utils.html import mark_safe
+from users import models as users_models
+from . import models as foods_models
+from . import my_validator
+
 
 # Create your models here.
 
@@ -23,7 +26,7 @@ class Food(models.Model):
     name = models.CharField(max_length=20)
     photo = models.ImageField(upload_to="enrolled_food", default="default.png")
     expired_date = models.DateField(null=False)
-    quantity = models.IntegerField(null=True)
+    quantity = models.PositiveIntegerField(null=True)
     created = models.DateTimeField(auto_now_add=True, null=True)
     user = models.ForeignKey(
         users_models.User, related_name="foods", on_delete=models.CASCADE

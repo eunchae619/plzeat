@@ -7,18 +7,113 @@
     box-sizing: border-box;
 }
 
-body {
+html body {
     margin: 0;
     font-family: 'NanumSquare', sans-serif;
 }
 
-a {
+body a {
     text-decoration: none;
     color: black;
 }
 
 
 
+input {
+    border: none;
+    border-style: solid;
+    border-width: thin;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #ffeed4 !important;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #ffc992;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transform: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+/*
+*
+messages
+*
+*/
+.msg_big {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+    z-index: 100;
+    animation: messageFadeIn 5s ease-in-out forwards;
+}
+
+.msg {
+    border-width: thin;
+    background-color: #ff763b;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+@keyframes messageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    95% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
 
 /*
 *
@@ -30,7 +125,7 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -64,13 +159,13 @@ nav
 *
 */
 nav {
-    z-index: 100;
     display: flex;
     align-items: center;
 }
 
 nav>img {
     height: 40px;
+    z-index: 10000;
 }
 
 nav>img:hover {

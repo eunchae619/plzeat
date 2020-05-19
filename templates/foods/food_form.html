@@ -1,18 +1,78 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_title %}
 식자재 등록
 {% endblock page_title %}
 
 {% block css %}
-
+<link rel="stylesheet" href="{% static '/users/css/login.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/foods/css/food_upload_image.css' %}" type="text/css">
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+{% load bootstrap4 %} {# import bootstrap4 / bootstrap3 #}
+{% bootstrap_css %} {# 임베디드 부트 스트랩 CSS #}
+{% bootstrap_javascript jquery='full'%} {# 부트 스트랩 JS + jQuery #}
+{{form.media}}
 {% endblock css %}
 
 
 {% block content %}
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if my_form.none_field_errors %}
+    {% for error in none_field_errors  %}
+    <span class="field_error">{{error}}</span>
+    {% endfor %}
+    {% endif %}
+    {% for field in my_form  %}
+    <div class="input {% if field.errors %}has_error{% endif %}">
+        {% if field.name == 'photo' %}
+        <div class="file-upload">
+
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' name="photo" onchange="readURL(this);" accept="image/*"
+                    id="id_photo" />
+                <div class="drag-text">
+                    <h3>클릭하거나 드래그하여 사진을 업로드 하세요!</h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="two_button">
+                    <button class="login_btn file-upload-btn " type="button"
+                        onclick="$('.file-upload-input').trigger( 'click' )">이미지
+                        변경</button>
+
+                </div>
+            </div>
+        </div>
+        {% elif field.name == 'expired_date' %}
+        {{ field }}
+        {% elif field.name == 'quantity' %}
+        <div class="input quantity_input">
+            <div class="jsLeft wrap_caret"><i class="fas fa-minus caret"></i></div>
+            <input value="1" class="jsQuantity q1" type="number" name="quantity" placeholder="갯수" required=""
+                id="id_quantity">
+            <div class="jsRight wrap_caret"><i class="fas fa-plus caret"></i></div>
+        </div>
+        {% else %}
+        {{field}}
+        {% endif %}
+        {% if field.errors %}
+        {% for error in field.errors  %}
+        <span class="error">{{error}}</span>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endfor %}
+    <button class="login_btn">식자재 등록</button>
 </form>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static '/foods/js/food_upload_image.js' %}"></script>
+<script src="{% static '/foods/js/quantity_button.js' %}"></script>
+{% endblock script %}

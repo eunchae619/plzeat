@@ -11,7 +11,7 @@
 
 {% block content %}
 
-{% for recipe in recipes %}
+{% for recipe in paged_recipes %}
 <a href="{% url 'recipies:recipe_detail' recipe.pk %}">
     <div class="recipe_list_box">
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">

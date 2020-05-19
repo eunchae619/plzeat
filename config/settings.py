@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "recipies.apps.RecipiesConfig",
     "foods.apps.FoodsConfig",
     "core.apps.CoreConfig",
+    "bootstrap_datepicker_plus",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,8 @@ EMAIL_PORT = "587"
 EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
 EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
 EMAIL_FROM = "eunchae@sandboxbb404cb6ef964fa29b4d1270da4a8fec.mailgun.org"
+
+
+BOOTSTRAP4 = {
+    "include_jquery": True,
+}

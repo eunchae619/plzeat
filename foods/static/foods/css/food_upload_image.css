@@ -1,3 +1,9 @@
+a:hover {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    color: black !important;
+}
+
 .wrapper {
     top: 15vh;
     width: 100vw;
@@ -9,7 +15,10 @@
     font-size: 17.6px !important;
 }
 
-input {}
+.input {
+    display: flex;
+    flex-direction: column;
+}
 
 input::placeholder {}
 
@@ -32,7 +41,8 @@ input::placeholder {}
 
 .file-upload-btn {
     width: 40%;
-    background: darkblue;
+    background: #ff3b3b;
+    margin-bottom: 10px;
 }
 
 .file-upload-btn:hover {
@@ -97,20 +107,25 @@ input::placeholder {}
 }
 
 .drag-text h3 {
-    font-weight: 100;
+    font-weight: 100 !important;
     text-transform: uppercase;
     padding: 60px 0;
     font-family: 'NanumSquare', sans-serif;
-    font-weight: bold;
+    font-weight: bold !important;
     color: #ffd779;
+    font-size: 1.2rem !important;
+}
+
+h3 {
+    font-weight: 100 !important;
 }
 
 .file-upload-image {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 130px;
+    max-width: 130px;
     margin: auto;
-    padding: 20px;
     display: block;
+    padding-bottom: 5px;
 }
 
 .remove-image {
@@ -146,6 +161,72 @@ input::placeholder {}
     padding: 0;
 }
 
+.input-group input {
+    border: none;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #ffeed4;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    height: 3.3rem;
+}
+
+.input-group input::placeholder {
+    color: #ffd779;
+    font-family: 'NanumSquare', sans-serif;
+}
+
+
+
+.input-group-text {
+    background-color: #ffc992 !important;
+    border-style: solid !important;
+    border-width: thin !important;
+    border-radius: 0 5px 5px 0 !important;
+    border-color: #ffeed4 !important;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.input-group-text i {
+    color: white;
+}
+
+.quantity_input {
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #ffeed4;
+    align-items: center;
+}
+
+.wrap_caret {
+    width: 10%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffc992;
+}
+
+.wrap_caret:hover {
+    cursor: pointer;
+}
+
+.q1 {
+    width: 80% !important;
+    text-align: center;
+    border: none;
+}
+
+.q1::placeholder {
+    text-align: center;
+}
 
 @media(max-width: 600px) {
     html {
