@@ -1,4 +1,136 @@
+.content_area {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* 본문에 적용되는 폰트 */
+@font-face {
+    font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 레시피 음식 사진 이미지 */
+.food_img_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .recipe_img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    /* border-radius: 70%; */
+}
+
+/* 음식 이름 */
+.food_subname {
+    display: inline-block;
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 30px;
+    color: #B7B7B7;
+    margin-left: 15px;
+    margin-right: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+}
+
+.like_img {
+    display: inline-block;
+    
+}
+
+.like_img > img {
+    width: 20px;
+    height: 20px;
+    text-align: right; 
+}
+
+.food_name {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+/* 레시피 정보 박스 */
+.recipe_infobox {
+    text-align: center;
+}
+
+/* 레시피 정보 박스 (양) */
+.recipe_quantity_box {
+    display: inline-block;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.quantity_img {
+    width: 20px;
+    height: 20px;
+}
+
+.quantity_text {
+    font-family: 'NIXGONM-Vb';
+    font-size: 18px;
+}
+
+/* 레시피 정보 박스 (요리 시간) */
+.recipe_time_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.time_img {
+    width: 20px;
+    height: 20px;
+}
+
+.time_text {
+    font-family: 'NIXGONM-Vb';
+    font-size: 18px;
+}
+
+/* 레시피 정보 박스 (난이도) */
+.recipe_level_box {
+    display: inline-block;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.level_img {
+    width: 20px;
+    height: 20px;
+}
+
+.level_text {
+    font-family: 'NIXGONM-Vb';
+    font-size: 18px;
+}
+
+/* '들어가는 재료' 타이틀 폰트 지정 */
+.food_ingredient_title {
+    font-family: 'NIXGONM-Vb';
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+/* '만드는 법' 타이틀 폰트 지정 */
+.recipe_detail_title {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+/* '만드는 법' 내용 폰트 지정 */
+.recipe_detail_explain {
+    /* font-family: 'NIXGONL-Vb'; */
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }

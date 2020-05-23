@@ -13,21 +13,61 @@ Recommandation
 
 
 {% block content %}
+
 <div class="content_area">
-    <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
-    <h3>{{recipe.name}}</h3>
-    <hr>
-    <h3>들어가는 재료</h3>
-    <ul>
-        {% for food in recipe.food.all %}
-        <li>{{food.name}}</li>
-        {% endfor %}
-    </ul>
-    <p>만드는 법 : {{recipe.how_to_create}}</p>
+    <div class="food_img_area">
+        <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
+    </div>
+    <div class="text_area">
+        <p class="food_subname">{{recipe.subname}}</p>
+        <div class="like_img">
+            <img src="{% static 'core/img/like_no.png' %}" id="img1" onclick="changeimg()">
+        </div>
+        <p class="food_name">{{recipe.name}}</p>
+        <div class="recipe_infobox">
+            <div class="recipe_quantity_box">
+                <img class="quantity_img" src="{% static 'core/img/humans.png' %}">
+                <p class="quantity_text">{{recipe.recipe_quantity}}인분</p>
+            </div>
+            <div class="recipe_time_box">
+                <img class="time_img" src="{% static 'core/img/clock.png' %}">
+                <p class="time_text">{{recipe.recipe_time}}분 이내</p>
+            </div>
+            <div class="recipe_level_box">
+                <img class="level_img" src="{% static 'core/img/stars.png' %}">
+                <p class="level_text">{{recipe.recipe_level}}</p>
+            </div>
+        </div>
+        <p class="food_ingredient_title">| 들어가는 재료</p>
+        <ul>
+            {% for food in recipe.food.all %}
+            <li>{{food.name}}</li>
+            {% endfor %}
+        </ul>
+        <p class="recipe_detail_title">| 만드는 법</p>
+        <div class="recipe_detail_explain">
+            <p>{{recipe.how_to_create|linebreaks}}</p>
+        </div>
+    </div>
 </div>
+
 {% endblock content %}
 
 
 {% block script %}
+<script>
+    var count = 0;
+    function changeimg() {
+        var img1 = document.getElementById("img1");
 
+        if (count == 0) {
+            count++;
+            img1.src = "{% static 'core/img/like_yes.png' %}"
+        }
+        else {
+            count--;
+            img1.src = "{% static 'core/img/like_no.png' %}"
+        }
+    }
+</script>
 {% endblock script %}
