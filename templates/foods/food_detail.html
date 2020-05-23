@@ -11,25 +11,37 @@
 
 
 {% block content %}
-<img class="food_img" src="{{food.photo.url}}" alt="img">
-<div class="food_detail_text">
-    <h1>{{food.name}}</h1>
-    <p>잔량 : {{food.quantity}}개</p>
-    <p>유통기한 : {{food.count_date}}</p>
-    <hr>
+<div class="content_area">
+    <img class="food_img" src="{{food.photo.url}}" alt="img">
+    <p class="food_name">{{food.name}}</p>
 
+    <div class="food_infobox">
+        <div class="food_quantity_box">
+            <img class="quantity_img" src="{% static 'core/img/quantity.png' %}"></img>
+            <p class="quantity_text">{{food.quantity}}개 남음</p>
+        </div>
+        <div class="food_time_box">
+            <img class="time_img" src="{% static 'core/img/clock.png' %}"></img>
+            <p class="time_text">{{food.count_date}}</p>
+        </div>
+    </div>
+    
+    <div class="food_detail_text">
+        {% if how_to_store %}
+        <p class="food_store_title">| 식자재 보관법</p>
+        <div class="food_store_text"> 
+            <p>{{how_to_store|linebreaks}}</p>
+        </div>
+        <p class="food_trim_title">| 식자재 손질법</p>
+        <div class="food_trim_text">
+            <p>{{how_to_trim|linebreaks}}</p>
+        </div>
 
-    {% if how_to_store %}
-    <h2>식자재 보관법</h2>
-    <p>{{how_to_store|linebreaks}}</p>
-    <h2>식자재 손질법</h2>
-    <p>{{how_to_trim|linebreaks}}</p>
-
-    {% endif %}
-    <a href=javascript:history.go(-1)>
-
-        <img class="back_img" src="{{food.photo.url}}" alt="img">
-    </a>
+        {% endif %}
+        <a href=javascript:history.go(-1)>
+            <img class="back_img" src="{% static 'core/img/back_button.png' %}" alt="img">
+        </a>
+    </div>
 </div>
 
 {% endblock content %}
