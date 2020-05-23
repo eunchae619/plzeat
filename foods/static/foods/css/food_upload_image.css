@@ -5,9 +5,10 @@ a:hover {
 }
 
 .wrapper {
-    top: 15vh;
+    margin-top: 15vh;
+    padding: 1rem 2rem 3rem 2rem;
     width: 100vw;
-    height: 70vh;
+    height: 85vh;
     background-color: white;
 }
 
@@ -232,6 +233,14 @@ h3 {
     html {
         font-size: 14px;
     }
+
+    .bottom_menus{
+        width: 52px !important;
+        height: 52px !important;
+    }
+    .bottom_menus i {
+        font-size: 22.4px !important;
+    }
 }
 
 @media(max-width: 500px) {
@@ -246,6 +255,10 @@ h3 {
 }
 
 @media(max-width: 400px) {
+
+}
+
+@media(max-height: 600px){
     html {
         font-size: 11px;
     }
