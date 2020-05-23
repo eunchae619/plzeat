@@ -225,7 +225,7 @@ paginator
 */
 .paginator {
     position: fixed;
-    bottom: 16vh;
+    bottom: 3vh;
     left: 0;
     width: 100vw;
     height: 30px;
