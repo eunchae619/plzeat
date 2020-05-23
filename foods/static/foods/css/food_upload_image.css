@@ -21,6 +21,15 @@ a:hover {
     flex-direction: column;
 }
 
+input{
+    font-weight: bold !important;
+}
+
+.input >input{
+    border-color:#ffeed4 !important;
+    border-width: medium;
+}
+
 input::placeholder {}
 
 .file-upload {
@@ -34,10 +43,10 @@ input::placeholder {}
     flex-wrap: wrap;
     padding: 1rem;
     border-style: solid;
-    border-width: thin;
+    border-width: medium;
     border-radius: 5px;
     border-color: #ffeed4;
-    z-index: 10;
+
 }
 
 .file-upload-btn {
@@ -165,7 +174,8 @@ h3 {
 .input-group input {
     border: none;
     border-style: solid;
-    border-width: thin;
+    border-width: medium;
+    border-right: none;
     border-radius: 5px;
     border-color: #ffeed4;
     font-size: 1.1rem;
@@ -183,7 +193,8 @@ h3 {
 .input-group-text {
     background-color: #ffc992 !important;
     border-style: solid !important;
-    border-width: thin !important;
+    border-width: medium !important;
+    border-left:none !important;
     border-radius: 0 5px 5px 0 !important;
     border-color: #ffeed4 !important;
     width: 40px;
@@ -202,7 +213,7 @@ h3 {
     flex-direction: row;
     justify-content: space-around;
     border-style: solid;
-    border-width: thin;
+    border-width: medium;
     border-radius: 5px;
     border-color: #ffeed4;
     align-items: center;

@@ -88,8 +88,8 @@ messages
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 15px;
-    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    padding: 1.2rem 4rem;
     text-align: center;
 }
 
@@ -158,17 +158,15 @@ header {
 nav
 *
 */
-nav {
-    display: flex;
-    align-items: center;
-}
 
-nav>img {
-    height: 40px;
+
+header>i {
     z-index: 10000;
+    font-size: 30px;
+    color:#ff8100;
 }
 
-nav>img:hover {
+header>i:hover {
     cursor: pointer;
 }
 
@@ -204,7 +202,7 @@ hidden_menu
 }
 
 .power-off {
-    font-size: 2.5rem;
+    font-size: 30px;
     color: #ff9393;
 }
 
