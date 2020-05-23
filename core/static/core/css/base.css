@@ -12,6 +12,11 @@ html body {
     font-family: 'NanumSquare', sans-serif;
 }
 
+body {
+    height: 100vh;
+    background: linear-gradient(#feb47b,#ff7e5f);
+}
+
 body a {
     text-decoration: none;
     color: black;
@@ -133,13 +138,14 @@ header {
     padding-right: 30px;
     width: 100vw;
     height: 15vh;
-    background-color: #FFFFEF;
+    border-bottom: double #ff5f5f;
+    border-width: 5px;
 }
 
 .header_title {
     display: flex;
     align-items: center;
-    color: #ff8100;
+    color: #d44400;
 }
 
 .header_title>img {
@@ -163,12 +169,13 @@ nav {
     align-items: center;
 }
 
-nav>img {
-    height: 40px;
+header >i {
     z-index: 10000;
+    font-size: 2rem;
+    color: #ff5f5f;
 }
 
-nav>img:hover {
+header>i:hover {
     cursor: pointer;
 }
 
@@ -217,7 +224,7 @@ wrapper
     position: relative;
     top: 15vh;
     width: 100vw;
-    height: 70vh;
+    height: 85vh;
 }
 
 /*
