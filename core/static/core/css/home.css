@@ -50,10 +50,12 @@
 }
 
 .food_title{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem !important;
 }
 
 .food_img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.2rem;
 }

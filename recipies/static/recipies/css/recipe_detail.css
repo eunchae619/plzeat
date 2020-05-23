@@ -1,3 +1,12 @@
+ul{
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+li{
+    margin-bottom: 0.3rem;
+}
+
 .content_area {
     height: 100%;
     overflow-y: scroll;
@@ -21,6 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 1rem 0;
 }
 .recipe_img {
     width: 150px;
@@ -28,13 +38,22 @@
     /* border-radius: 70%; */
 }
 
+/* 가운데정렬 하기위해 한번 더 밖에 씌운 박스 */
+.big_name_box{
+    display: flex;
+    justify-content: center;
+}
+/* 음식이름,부이름,하트 묶는박스 */
+.name_box{
+    display:inline-block;
+    margin: 0 auto;
+}
+
 /* 음식 이름 */
 .food_subname {
-    display: inline-block;
     /* font-family: 'NIXGONM-Vb'; */
-    font-size: 30px;
+    font-size: 20px;
     color: #B7B7B7;
-    margin-left: 15px;
     margin-right: 0px;
     padding-right: 0px;
     margin-bottom: 0px;
@@ -42,7 +61,7 @@
 
 .like_img {
     display: inline-block;
-    
+    margin-left: 0.5rem;
 }
 
 .like_img > img {
@@ -55,19 +74,30 @@
     /* font-family: 'NIXGONM-Vb'; */
     font-size: 40px;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* 구분선 */
+.recipe_hr{
+    border-color: #ffbb75;
+    border-width: thin;
+    width: 80%;
 }
 
 /* 레시피 정보 박스 */
 .recipe_infobox {
-    text-align: center;
+    display: flex;
+    justify-content: space-around;    
+    width: 80%;
+    margin: 2rem auto;
 }
 
 /* 레시피 정보 박스 (양) */
 .recipe_quantity_box {
     display: inline-block;
     text-align: center;
-    margin-right: 30px;
 }
 
 .quantity_img {
@@ -100,11 +130,9 @@
 .recipe_level_box {
     display: inline-block;
     text-align: center;
-    margin-left: 30px;
 }
 
 .level_img {
-    width: 20px;
     height: 20px;
 }
 
@@ -115,9 +143,10 @@
 
 /* '들어가는 재료' 타이틀 폰트 지정 */
 .food_ingredient_title {
-    font-family: 'NIXGONM-Vb';
+    /* font-family: 'NIXGONM-Vb'; */
     font-size: 25px;
     margin-left: 10px;
+    font-weight: bold;
 }
 
 /* '만드는 법' 타이틀 폰트 지정 */
@@ -133,4 +162,5 @@
     font-size: 20px;
     margin-right: 10px;
     margin-left: 10px;
+    font-weight: bold;
 }

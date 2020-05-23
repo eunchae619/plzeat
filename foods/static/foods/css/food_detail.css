@@ -1,4 +1,5 @@
 .content_area {
+    padding: 1rem 0.5rem;
     height: 100%;
     overflow-y: scroll;
 }
@@ -18,10 +19,11 @@
 
 /* 음식 사진 이미지 */
 .food_img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: block;
     margin: 0px auto;
+    margin-bottom: 1rem;
 }
 .back_img{
     width: 50px;

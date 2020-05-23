@@ -19,11 +19,16 @@ Recommandation
         <img class="recipe_img" src="{{recipe.photo.url}}" alt="recipe">
     </div>
     <div class="text_area">
-        <p class="food_subname">{{recipe.subname}}</p>
-        <div class="like_img">
-            <img src="{% static 'core/img/like_no.png' %}" id="img1" onclick="changeimg()">
+        <div class="big_name_box">
+            <div class="name_box">
+                <p class="food_subname">{{recipe.subname}}</p>
+                <p class="food_name">{{recipe.name}}</p>
+                <div class="like_img">
+                    <img src="{% static 'core/img/like_no.png' %}" id="img1" onclick="changeimg()">
+                </div>
+            </div>
         </div>
-        <p class="food_name">{{recipe.name}}</p>
+        <hr class="recipe_hr">
         <div class="recipe_infobox">
             <div class="recipe_quantity_box">
                 <img class="quantity_img" src="{% static 'core/img/humans.png' %}">
@@ -38,10 +43,11 @@ Recommandation
                 <p class="level_text">{{recipe.recipe_level}}</p>
             </div>
         </div>
+
         <p class="food_ingredient_title">| 들어가는 재료</p>
         <ul>
             {% for food in recipe.food.all %}
-            <li>{{food.name}}</li>
+            <li><i class="fas fa-check"></i>{{food.name}}</li>
             {% endfor %}
         </ul>
         <p class="recipe_detail_title">| 만드는 법</p>
