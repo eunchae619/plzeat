@@ -4,6 +4,7 @@
     align-items: center;
     padding: 0 2rem;
     height: 15vh;
+    font-weight: bold;
 }
 
 .main_top>span {
@@ -18,7 +19,7 @@
 .big_food_list {
     display: flex;
     align-items: center;
-    height: 55vh;
+    height: 60vh;
 
 }
 
@@ -26,19 +27,30 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 0 6vw;
+    padding: 0 3vw;
 }
 
 .food_card {
-    width: 40vw;
-    height: 22vh;
+    width: 43vw;
+    height: 24vh;
     margin: 0 2vw;
     margin-bottom: 4vh;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #FAFAFA;
+    font-weight: bold;
+
+}
+
+.food_card span {
+    margin-bottom: 0.2rem;
+}
+
+.food_title{
+    font-size: 1.5rem;
 }
 
 .food_img {

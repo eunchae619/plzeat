@@ -22,7 +22,7 @@ Home
         <a href="{% url 'foods:food_detail' food.pk %}">
             <div class="food_card">
                 <img class="food_img" src="{{food.photo.url}}" alt="img">
-                <span>{{food}}</span>
+                <span class="food_title">{{food}}</span>
                 <span>유통기한 : {{food.count_date}}</span>
                 <span>잔량 : {{food.quantity}}개</span>
             </div>
