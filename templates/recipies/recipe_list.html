@@ -10,6 +10,16 @@
 {% endblock css %}
 
 {% block content %}
+
+<!-- 
+ <select id="sort-select" onchange="location = this.value;">
+    <option class="sort-date" value="/">신규등록순</option>
+    <option class="sort-rank" value="?sort=rank">별점순</option>
+    {% if user.is_authenticated %}
+    <option class="sort-bookmark" value="?sort=bookmark">즐겨찾기</option>
+{% endif %} -->
+
+
 <div class="recipe_list">
 {% for recipe in paged_recipes %}
 

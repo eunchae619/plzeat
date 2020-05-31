@@ -19,8 +19,10 @@ def recipe_list(request, pk):
         for food in reco_food.food.all():
             count = count + user_food_list.count(food.name)
             reco_food_len = reco_food_len + 1
+        # if flag == 1
         if count == reco_food_len:
             resulted_reco_recipe.append(reco_food.name)
+
     recipes = reco_recipe.filter(name__in=resulted_reco_recipe)
 
     paginator = Paginator(recipes, 6)

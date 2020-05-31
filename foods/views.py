@@ -10,10 +10,17 @@ from . import models as foods_model, forms
 
 def food_list(request):
     page = request.GET.get("page")
-    food_list = foods_model.Food.objects.filter(user=request.user.pk)
+    sort = request.GET.get('sort','')
+    if sort == 'mypost': #등록순
+     food_list = foods_model.Food.objects.filter(user=request.user.pk)  
+    elif sort == 'quantity': #잔량순
+     food_list = foods_model.Food.objects.filter(user=request.user.pk).order_by('-quantity')
+    else: #유통기한 마감일순, 디폴트 정렬
+     food_list = foods_model.Food.objects.filter(user=request.user.pk).order_by('expired_date')
+
     paginator = Paginator(food_list, 6)
     foods = paginator.get_page(page)
-    context = {"foods": foods, "paginator": paginator}
+    context = {"foods": foods, "paginator": paginator,'sort': sort} 
     return render(request, "foods/food_list.html", context)
 
 
@@ -46,3 +53,4 @@ class FoodRegisterView(CreateView):
         food.user = self.request.user
         food.save()
         return super().form_valid(form)
+
