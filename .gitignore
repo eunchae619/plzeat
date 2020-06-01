@@ -7,3 +7,8 @@ env.bak/
 venv.bak/
 db.sqlite3
 myvenv/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
