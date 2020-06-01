@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "ekbzlb)rokiz0$*l9*yi1w0z0j3fpf_vhzc-u=5v$i3dhdtl2o"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["plzeat-env.eba-dtvc3z2z.us-west-2.elasticbeanstalk.com"]
 
@@ -119,12 +119,12 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    "/core/static/",
-    "/foods/static/",
-    "/recipies/static/",
-    "/users/static/",
+    "core/static/",
+    "foods/static/",
+    "recipies/static/",
+    "users/static/",
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "/media/"

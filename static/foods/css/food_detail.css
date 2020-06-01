@@ -1,0 +1,127 @@
+.content_area {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* 본문에 적용되는 폰트 */
+@font-face {
+    font-family: 'NIXGONM-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NIXGONL-Vb'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 음식 사진 이미지 */
+.food_img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 1.7rem auto;
+}
+.back_img{
+    width: 50px;
+    height: 50px;
+}
+
+/* 음식 이름 */
+.food_name {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 30px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 구분선 */
+.recipe_hr{
+    border-color: #ffbb75;
+    border-width: thin;
+    width: 80%;
+}
+
+/* 식자재 정보 박스 */
+.food_infobox {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: 2rem auto;
+}
+
+/* 식자재 정보 박스 (잔량) */
+.food_quantity_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.quantity_img {
+    width: 10px;
+    height: 20px;
+}
+
+.quantity_text {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 18px;
+}
+
+/* 레시피 정보 박스 (유통 기한) */
+.food_time_box {
+    display: inline-block;
+    text-align: center;
+}
+
+.time_img {
+    width: 20px;
+    height: 20px;
+}
+
+.time_text {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 18px;
+}
+
+/* '식자재 보관법' 타이틀 폰트 지정 */
+.food_store_title {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* '식자재 보관법' 내용 폰트 지정 */
+.food_store_text {
+    /* font-family: 'NIXGONL-Vb'; */
+    font-size: 17px;
+    margin: 0 1.5rem;
+
+}
+
+/* '식자재 손질법' 타이틀 폰트 지정 */
+.food_trim_title {
+    /* font-family: 'NIXGONM-Vb'; */
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+
+/* '식자재 보관법' 내용 폰트 지정 */
+.food_trim_text {
+    /* font-family: 'NIXGONL-Vb'; */
+    font-size: 17px;
+    margin: 0 1.5rem;
+}
+
+/* 뒤로가기 버튼 */
+.back_img {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
