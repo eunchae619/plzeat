@@ -40,3 +40,13 @@ def recipe_list(request, pk):
 def recipe_detail(request, pk):
     recipe = recipies_model.Recipe.objects.get(pk=pk)
     return render(request, "recipies/recipe_detail.html", {"recipe": recipe})
+
+def recipe_worldcup(request):
+    # DB에있는 모든 레시피 객체가 all_recipes에 담김
+    all_recipes = recipies_model.Recipe.objects.all()
+    print(all_recipes)
+
+    # 64개의 레시피 객체를 랜덤으로 뽑아서 random_picked_recipes변수안에 담음
+    random_picked_recipes = all_recipes.random(2)
+
+    return render(request, 'recipies/recipe_worldcup.html',{'recipes':random_picked_recipes})

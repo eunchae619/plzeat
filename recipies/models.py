@@ -1,4 +1,5 @@
 from django.db import models
+from django_random_queryset import RandomManager
 
 
 class Recipe(models.Model):
@@ -10,6 +11,7 @@ class Recipe(models.Model):
     recipe_quantity = models.CharField(max_length=100, null=True)
     recipe_time = models.CharField(max_length=100, null=True)
     recipe_level = models.CharField(max_length=100, null=True)
+    objects = RandomManager()
 
     def __str__(self):
         return self.name

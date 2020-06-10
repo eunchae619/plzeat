@@ -1,0 +1,8 @@
+{% for recipe in recipes %}
+<img style="width: 100px;" src="{{recipe.photo.url}}" alt="recipe">
+<p>{{recipe.name}}</p>
+{% endfor %}
+
+{% block script %}
+<!-- 여기에 javascript관련 파일이나 script태그 넣으시면 됩니다 -->
+{% endblock script %}

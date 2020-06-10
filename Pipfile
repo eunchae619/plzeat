@@ -13,6 +13,7 @@ django-dotenv = "*"
 django-bootstrap-datepicker-plus = "*"
 django-bootstrap4 = "*"
 requests = "*"
+django-random-queryset = "*"
 
 [requires]
 python_version = "3.7"
