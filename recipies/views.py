@@ -45,8 +45,7 @@ def recipe_worldcup(request):
     # DB에있는 모든 레시피 객체가 all_recipes에 담김
     all_recipes = recipies_model.Recipe.objects.all()
     print(all_recipes)
-    # test
-    # eafsdf
+
 
     # 64개의 레시피 객체를 랜덤으로 뽑아서 random_picked_recipes변수안에 담음
     random_picked_recipes = all_recipes.random(2)
